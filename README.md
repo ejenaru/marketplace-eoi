@@ -1,4 +1,4 @@
-Una vez clonado el repositorio, cada alumno deberá crear la siguinete estructura de carpetas para guardar los ejercicios :
+Una vez clonado el repositorio, cada alumno deberá crear la siguiente estructura de carpetas para guardar los ejercicios :
 
 - <Iniciales del Nombre>
     - Back

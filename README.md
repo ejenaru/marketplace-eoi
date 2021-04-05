@@ -2,7 +2,7 @@ Una vez clonado el repositorio, cada alumno deberá crear la siguiente estructur
 
 - <Iniciales del Nombre>
     - Back
-    - Front
+    - Front 
 
 
 Por ejemplo, si mi nombre es Antonio Pérez Martínez , tendré que crear estas carpetas :

@@ -25,6 +25,7 @@ pipeline {
                     stages {
                         stage('<< Generación de artefactos Java >>') {
                             steps {
+                                echo "Generando Docker Java"
                                 /*sh 'cd FalmBack; mvn clean install -DskipTests;'*/
                                                             
                                                                

@@ -15,5 +15,9 @@
 		 <nombre>Christian</nombre>
 		<apellidos>Di Guida</apellidos>
 	</alumno>
+	<alumno>
+		 <nombre>Daniel</nombre>
+		<apellidos>Jaen Marquez</apellidos>
+	</alumno>
 </alumnos>
 

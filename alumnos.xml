@@ -19,5 +19,9 @@
 		 <nombre>Daniel</nombre>
 		<apellidos>Jaen Marquez</apellidos>
 	</alumno>
+	<alumno>
+		 <nombre>Fernando</nombre>
+		<apellidos>Bernabeu Aleix</apellidos>
+	</alumno>
 </alumnos>
 

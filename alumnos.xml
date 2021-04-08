@@ -23,5 +23,9 @@
 		 <nombre>Fernando</nombre>
 		<apellidos>Bernabeu Aleix</apellidos>
 	</alumno>
+	<alumno>
+		 <nombre>Jonathan</nombre>
+		<apellidos>Pérez Candela</apellidos>
+	</alumno>
 </alumnos>
 

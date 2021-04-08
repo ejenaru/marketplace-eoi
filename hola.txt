@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 HOLA 
+=======
+Hola
+>>>>>>> 4542fb20451507f50da4adfeec84236e942c7bb1
 =======
 <<<<<<< HEAD
 "Hola me llamo Irene" 

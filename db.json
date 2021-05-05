@@ -1,0 +1,30 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "nombre": "Nombre",
+      "password": "Password"
+    }
+  ],
+  "articulo": [
+    {
+      "id": 1,
+      "nombre": "Nombre",
+      "precio":12,
+      "stock": 1
+    }
+  ],
+  "pedido": [
+    {
+      "id": 1,
+      "nombre": "Nombre",
+      "fecha": "12/12/2020",
+      "articulos":[
+        {
+          "id":1,
+          "cantidad":12
+        }
+      ]
+    }
+  ]
+}

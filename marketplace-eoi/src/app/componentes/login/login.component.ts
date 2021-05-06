@@ -2,6 +2,7 @@ import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/clases/usuario';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(fb: FormBuilder, private userService: UsuarioService) {
+  constructor(fb: FormBuilder, private userService: UsuarioService, private auth:AuthService) {
     this.form = fb.group({
       "name": ["", Validators.required],
       "pass": ["", Validators.required]
@@ -58,6 +59,9 @@ export class LoginComponent implements OnInit {
       if (this.userFound == undefined) {
         alert("El usuario no existe o la contraseña es incorrecta");
       } else {
+        //TODO: entrar en la app
+        this.auth.setIsLogged(true);
+        this.auth.setUserLogged(this.userFound);
         alert("ADELANTE");
       }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './servicios/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'marketplace-eoi';
 
+  constructor(private auth: AuthService){
+
+  }
+
 
   checkLogin():boolean{
-    return true;
+    //TODO
+    return this.auth.getIsLogged;
   }
 }

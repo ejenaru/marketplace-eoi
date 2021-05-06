@@ -11,7 +11,7 @@
     "crear componente": "ng g c -m app.module componentes/PanelPrincipal",
     "crear pipe": "ng g p pipes/Nueva",
     "crear interfaz": "ng g i interfaces/NuevaInterfaz",
-    "crear servicio": "ng g s servicios/Pedido",
+    "crear servicio": "ng g s servicios/Auth",
     "crear clase": "ng g class clases/Pedido"
   },
   "private": true,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   nombre = new FormControl("", Validators.required);
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private userService: UsuarioService) {
     this.form = fb.group({
       "nombre": this.nombre,
       "pass": ["", Validators.required]
@@ -27,6 +28,21 @@ export class LoginComponent implements OnInit {
   visualizarForm() {
    console.log(this.form.value["nombre"],this.form.value["pass"]);
    
+  }
+
+  visualizaUser() {
+   
+    this.userService.getUserWithID(1).subscribe(
+      (data) => {
+
+        console.log(data);
+        
+
+      },
+      error => console.error(error)
+
+    )
+    
   }
 
 

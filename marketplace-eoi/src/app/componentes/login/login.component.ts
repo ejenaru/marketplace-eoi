@@ -1,5 +1,7 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Usuario } from 'src/app/clases/usuario';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
@@ -9,44 +11,53 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
+  users: Array<Usuario>;
 
-  nombre = new FormControl("", Validators.required);
+  form: FormGroup;
 
   constructor(fb: FormBuilder, private userService: UsuarioService) {
     this.form = fb.group({
-      "nombre": this.nombre,
+      "name": ["", Validators.required],
       "pass": ["", Validators.required]
     });
   }
 
-  onSubmitModelBased() {
-    console.log("model-based form submitted");
-    console.log(this.form);
-  }
+  ngOnInit(): void {
 
-  visualizarForm() {
-   console.log(this.form.value["nombre"],this.form.value["pass"]);
-   
-  }
-
-  visualizaUser() {
-   
-    this.userService.getUserWithID(1).subscribe(
-      (data) => {
-
-        console.log(data);
-        
-
+    this.userService.getUserList().subscribe(
+      (users) => {
+        this.users=users;
+        console.log(users);
       },
       error => console.error(error)
-
     )
-    
+
   }
 
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(this.form.value);
+    } else {
+      alert("NO PUEDEN HABER CAMPOS VACÍOS");
+    }
+  }
 
-  ngOnInit(): void {
+  userName: string;
+  userPass: string;
+
+  validate() {
+
+    this.userName=this.form.value["name"];
+    this.userPass=this.form.value["pass"];
+
+    console.log(this.userName,this.userPass);
+    
+
+    if (this.userName) {
+      
+    } else {
+      
+    }
     
   }
 

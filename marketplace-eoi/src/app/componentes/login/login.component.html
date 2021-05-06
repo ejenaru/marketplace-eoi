@@ -1,14 +1,14 @@
 <section class="container">
 
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <label for="">Usuario</label>
-        <input class="form-control" type="text" formControlName="nombre">
+        <input class="form-control" type="text" formControlName="name" required>
         <br>
         <label for="">Contraseña</label>
-        <input class="form-control" type="password" formControlName="pass">
+        <input class="form-control" type="password" formControlName="pass" required>
         <br>
         <div class="d-flex justify-content-center">
-            <button (click)="visualizaUser()" class="btn btn-primary">Iniciar Sesión</button>
+            <button (click)="validate()" class="btn btn-primary">Iniciar Sesión</button>
         </div>
 
     </form>

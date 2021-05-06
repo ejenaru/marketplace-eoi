@@ -4,6 +4,11 @@
       "id": 1,
       "nombre": "Nombre",
       "password": "Password"
+    },
+    {
+      "id": 2,
+      "nombre": "Nombre2",
+      "password": "Password2"
     }
   ],
   "articulo": [

@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --open",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "crear componente": "ng g c -m app.module componentes/Item",
     "crear pipe": "ng g p pipes/Nueva",
     "crear interfaz": "ng g i interfaces/NuevaInterfaz",
-    "crear servicio":"ng g s servicios/Pedido",
+    "crear servicio": "ng g s servicios/Pedido",
     "crear clase": "ng g class clases/Pedido"
   },
   "private": true,

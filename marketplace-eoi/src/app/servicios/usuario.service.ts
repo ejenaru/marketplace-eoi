@@ -24,6 +24,11 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${environment.BACKEND_URL}/usuario/${id}`);
   }
 
+  getUserWithNamePass(nombre:string, pass:string):Observable<Usuario>{
+    //Devuelve el usuario a través del nombre y la contraseña
+    return this.http.get<Usuario>(`${environment.BACKEND_URL}/usuario/?name=${nombre}&password=${pass}`);
+  }
+
   addUser (usuario:Usuario):Observable<Usuario>{
     //---------------------Publica Un solo item al servidor REST
     //---------POST-------- Devuelve un "observable" al que hay que subscribirse
@@ -33,7 +38,7 @@ export class UsuarioService {
 
   updateUser(usuario:Usuario):Observable<Usuario>{
     //---------------------Actualiza Un solo item al servidor REST
-    //---------POST-------- Devuelve un "observable" al que hay que subscribirse
+    //---------POST--------Devuelve un "observable" al que hay que subscribirse
     //---------------------Devuelve el usuario nuevo 
     return this.http.put<Usuario>(`${environment.BACKEND_URL}/usuario/${usuario.id}`, usuario, this.httpOptions);
   }

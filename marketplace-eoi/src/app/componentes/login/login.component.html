@@ -1,12 +1,17 @@
 <section class="container">
 
-    <form action="">
+    <form [formGroup]="form">
         <label for="">Usuario</label>
-        <input class="form-control" type="text">
-        <label for="">Contraseña</label>
-        <input class="form-control" type="password">
+        <input class="form-control" type="text" formControlName="nombre">
         <br>
-        <button class="btn btn-primary">Iniciar Sesión</button>
+        <label for="">Contraseña</label>
+        <input class="form-control" type="password" formControlName="pass">
+        <br>
+        <div class="d-flex justify-content-center">
+            <button (click)="visualizarForm()" class="btn btn-primary">Iniciar Sesión</button>
+        </div>
+
     </form>
+
 
 </section>

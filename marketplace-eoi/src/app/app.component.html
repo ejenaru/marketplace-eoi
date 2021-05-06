@@ -1,4 +1,6 @@
-
-<app-login></app-login>
+<app-login *ngIf="checkLogin(); else elseBlock"></app-login>
+<ng-template #elseBlock>
+    <app-panel-principal></app-panel-principal>
+</ng-template>
 
 <router-outlet></router-outlet>

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'marketplace-eoi';
+
+
+  checkLogin():boolean{
+    return true;
+  }
 }

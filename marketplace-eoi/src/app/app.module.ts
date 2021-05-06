@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PanelPrincipalComponent } from './componentes/panel-principal/panel-principal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    PanelPrincipalComponent
   ],
   imports: [
     BrowserModule,

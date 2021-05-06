@@ -24,41 +24,53 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userService.getUserList().subscribe(
-      (users) => {
-        this.users=users;
-        console.log(users);
-      },
-      error => console.error(error)
-    )
+    // this.userService.getUserList().subscribe(
+    //   (users) => {
+    //     this.users=users;
+    //     console.log(users);
+    //   },
+    //   error => console.error(error)
+    // )
 
-  }
-
-  onSubmit() {
-    if (this.form.valid) {
-      console.log(this.form.value);
-    } else {
-      alert("NO PUEDEN HABER CAMPOS VACÍOS");
-    }
   }
 
   userName: string;
   userPass: string;
 
-  validate() {
+  userFound: Usuario;
 
-    this.userName=this.form.value["name"];
-    this.userPass=this.form.value["pass"];
+  onSubmit() {
+    if (this.form.valid) {
 
-    console.log(this.userName,this.userPass);
-    
+      this.userName = this.form.value["name"];
+      this.userPass = this.form.value["pass"];
 
-    if (this.userName) {
-      
+
+      this.userService.getUserWithNamePass(this.userName, this.userPass).subscribe(
+        (user: Usuario) => {
+          this.userFound = user;
+          console.log(this.userFound);
+          
+        },
+        error => console.error(error)
+      )
+
+      if (this.userFound == undefined) {
+        alert("El usuario no existe o la contraseña es incorrecta");
+      } else {
+        alert("ADELANTE");
+      }
+
     } else {
-      
+      alert("NO PUEDEN HABER CAMPOS VACÍOS");
     }
-    
+
   }
+
+
+
+  // validate() {
+
+  // }
 
 }

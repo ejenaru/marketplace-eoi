@@ -1,0 +1,20 @@
+<section class="container">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label>Nombre Artículo</label>
+        <input class="form-control" type="text" formControlName="artName" required>
+        <br>
+        <label>Precio</label>
+        <input class="form-control" type="number" formControlName="artPrice" required>
+        <br>
+        <label>Stock Inicial</label>
+        <input class="form-control" type="number" formControlName="artStock" required>
+        <br>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary">Crear</button>
+        </div>
+
+    </form>
+
+
+</section>

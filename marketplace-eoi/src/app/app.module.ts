@@ -12,6 +12,9 @@ import { ArticulosComponent } from './componentes/articulos/articulos.component'
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import { NuevoUsuarioComponent } from './componentes/nuevo-usuario/nuevo-usuario.component';
 import { ConsultarUsuarioComponent } from './componentes/consultar-usuario/consultar-usuario.component';
+import { NuevoArticuloComponent } from './componentes/nuevo-articulo/nuevo-articulo.component';
+import { ConsultarArticuloComponent } from './componentes/consultar-articulo/consultar-articulo.component';
+
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { ConsultarUsuarioComponent } from './componentes/consultar-usuario/consu
     ArticulosComponent,
     PedidosComponent,
     NuevoUsuarioComponent,
-    ConsultarUsuarioComponent
+    ConsultarUsuarioComponent,
+    NuevoArticuloComponent,
+    ConsultarArticuloComponent
   ],
   imports: [
     BrowserModule,

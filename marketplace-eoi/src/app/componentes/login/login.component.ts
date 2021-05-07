@@ -1,4 +1,3 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/clases/usuario';
@@ -16,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(fb: FormBuilder, private userService: UsuarioService, private auth:AuthService) {
+  constructor(fb: FormBuilder, private userService: UsuarioService, private auth: AuthService) {
     this.form = fb.group({
       "name": ["", Validators.required],
       "pass": ["", Validators.required]
@@ -25,14 +24,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.userService.getUserList().subscribe(
-    //   (users) => {
-    //     this.users=users;
-    //     console.log(users);
-    //   },
-    //   error => console.error(error)
-    // )
-
   }
 
   userName: string;
@@ -40,41 +31,27 @@ export class LoginComponent implements OnInit {
 
   userFound: Usuario;
 
-  onSubmit() {
+  async onSubmit() {
+
     if (this.form.valid) {
 
       this.userName = this.form.value["name"];
       this.userPass = this.form.value["pass"];
 
+      this.userFound = await this.userService.getUserWithNamePass(this.userName, this.userPass);
 
-      this.userService.getUserWithNamePass(this.userName, this.userPass).subscribe(
-        (user: Usuario) => {
-          this.userFound = user;
-          console.log(this.userFound);
-          
-        },
-        error => console.error(error)
-      )
-
-      if (this.userFound == undefined) {
-        alert("El usuario no existe o la contraseña es incorrecta");
+      if (Object.entries(this.userFound).length === 0) {
+        alert("El usuario no existe o los datos son incorrectos");
       } else {
         //TODO: entrar en la app
         this.auth.setIsLogged(true);
         this.auth.setUserLogged(this.userFound);
-        alert("ADELANTE");
       }
 
     } else {
-      alert("NO PUEDEN HABER CAMPOS VACÍOS");
+      alert("No pueden haber campos vacíos");
     }
 
   }
-
-
-
-  // validate() {
-
-  // }
 
 }

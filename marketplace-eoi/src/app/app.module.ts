@@ -7,13 +7,19 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PanelPrincipalComponent } from './componentes/panel-principal/panel-principal.component';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { ArticulosComponent } from './componentes/articulos/articulos.component';
+import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PanelPrincipalComponent
+    PanelPrincipalComponent,
+    UsuariosComponent,
+    ArticulosComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,

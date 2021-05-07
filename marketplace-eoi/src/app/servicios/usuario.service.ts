@@ -24,9 +24,9 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${environment.BACKEND_URL}/usuario/${id}`);
   }
 
-  getUserWithNamePass(nombre:string, pass:string):Observable<Usuario>{
+  getUserWithNamePass(nombre:string, pass:string):Promise<Usuario>{
     //Devuelve el usuario a través del nombre y la contraseña
-    return this.http.get<Usuario>(`${environment.BACKEND_URL}/usuario/?name=${nombre}&password=${pass}`);
+    return this.http.get<Usuario>(`${environment.BACKEND_URL}/usuario/?name=${nombre}&password=${pass}`).toPromise();
   }
 
   addUser (usuario:Usuario):Observable<Usuario>{

@@ -27,7 +27,7 @@ export class ArticuloService {
   }
 
   updateArticulo(articulo:Articulo):Observable<Articulo>{
-    //POST
+    //PUT
     return this.http.put<Articulo>(`${environment.BACKEND_URL}/articulo/${articulo.id}`, articulo, this.httpOptions);
   }
 
@@ -38,5 +38,10 @@ export class ArticuloService {
 
   getArticuloList():Observable<Array<Articulo>>{
     return this.http.get<Array<Articulo>>(`${environment.BACKEND_URL}/articulo`);
+  }
+
+  getLikedArticuloList(nombre: string):Observable<Array<Articulo>>{
+    //LIKE
+    return this.http.get<Array<Articulo>>(`${environment.BACKEND_URL}/articulo?nombre_like=${nombre}`);
   }
 }

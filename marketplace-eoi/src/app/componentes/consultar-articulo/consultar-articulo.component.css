@@ -1,0 +1,11 @@
+.container {
+    width: 20%;
+    margin-top: 10%;
+}
+
+.artContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

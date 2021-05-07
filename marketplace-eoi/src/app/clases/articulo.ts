@@ -1,13 +1,13 @@
 export class Articulo {
-    id:number;
+    id?:number;
     nombre: string;
     precio: number;
     stock: number;
 
     constructor(id:number, nombre: string, precio: number, stock: number,){
             this.id = id;
-            this.nombre;
-            this.precio;
-            this.stock;
+            this.nombre = nombre;
+            this.precio = precio;
+            this.stock = stock;
     }
 }

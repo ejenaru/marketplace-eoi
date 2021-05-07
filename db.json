@@ -9,26 +9,41 @@
       "id": 2,
       "nombre": "Nombre2",
       "password": "Password2"
+    },
+    {
+      "id": 3,
+      "nombre": "a",
+      "password": "a"
+    },
+    {
+      "nombre": "Irene",
+      "password": "pass",
+      "id": 4
+    },
+    {
+      "nombre": "asd",
+      "password": "asd",
+      "id": 5
     }
   ],
   "articulo": [
     {
       "id": 1,
       "nombre": "Nombre",
-      "precio":12,
+      "precio": 12,
       "stock": 1
     }
   ],
   "pedido": [
     {
       "id": 1,
-      "idUsuario":1,
+      "idUsuario": 1,
       "nombre": "Nombre",
       "fecha": "12/12/2020",
-      "articulos":[
+      "articulos": [
         {
-          "id":1,
-          "cantidad":12
+          "id": 1,
+          "cantidad": 12
         }
       ]
     }

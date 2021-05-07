@@ -29,6 +29,10 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${environment.BACKEND_URL}/usuario/?name=${nombre}&password=${pass}`).toPromise();
   }
 
+  getUserLike(nombre:string):Observable<Array<Usuario>>{
+    return this.http.get<Array<Usuario>>(`${environment.BACKEND_URL}/usuario?nombre_like=${nombre}`);
+  }
+
   addUser (usuario:Usuario):Observable<Usuario>{
     //---------------------Publica Un solo item al servidor REST
     //---------POST-------- Devuelve un "observable" al que hay que subscribirse

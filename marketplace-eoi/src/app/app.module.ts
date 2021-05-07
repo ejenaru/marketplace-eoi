@@ -10,6 +10,8 @@ import { PanelPrincipalComponent } from './componentes/panel-principal/panel-pri
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { ArticulosComponent } from './componentes/articulos/articulos.component';
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
+import { NuevoUsuarioComponent } from './componentes/nuevo-usuario/nuevo-usuario.component';
+import { ConsultarUsuarioComponent } from './componentes/consultar-usuario/consultar-usuario.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { PedidosComponent } from './componentes/pedidos/pedidos.component';
     PanelPrincipalComponent,
     UsuariosComponent,
     ArticulosComponent,
-    PedidosComponent
+    PedidosComponent,
+    NuevoUsuarioComponent,
+    ConsultarUsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,11 @@
       "nombre": "Irene",
       "password": "qwe",
       "id": 6
+    },
+    {
+      "nombre": "Pepe",
+      "password": "gsd",
+      "id": 7
     }
   ],
   "articulo": [
@@ -67,6 +72,12 @@
       "precio": 7,
       "stock": 6,
       "id": 6
+    },
+    {
+      "nombre": "aaa",
+      "precio": 55,
+      "stock": 11,
+      "id": 7
     }
   ],
   "pedido": [

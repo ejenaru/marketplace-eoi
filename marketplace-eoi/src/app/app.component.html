@@ -1,7 +1,7 @@
-<app-panel-principal ></app-panel-principal>
-<!--<ng-template #elseBlock> *ngIf="checkLogin(); else elseBlock"
+<app-panel-principal *ngIf="checkLogin(); else elseBlock"></app-panel-principal>
+<ng-template #elseBlock> 
     <app-login></app-login>
-</ng-template>-->
+</ng-template>
 
 
 <footer class="navbar fixed-bottom">

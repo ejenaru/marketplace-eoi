@@ -1,0 +1,13 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.btn-outline-danger {
+    margin-bottom: 7px;
+}
+
+.row {
+    margin-left: 5%;
+}

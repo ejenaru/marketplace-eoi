@@ -1,0 +1,19 @@
+<img src="../../../assets/logoMPart.png" alt="" width="250">
+
+<div class="row">
+    
+    <div>
+        <h2>{{art.nombre}}</h2>
+
+        <p>Stock: {{art.stock}}</p>
+        <p>Precio: {{art.precio}} €</p>
+        <p>Pedido veces</p>
+    </div>
+
+    <div class="buttonContainer">
+        <br>
+        <button class="btn btn btn-outline-danger" (click)="deleteArticulo(art)">Eliminar</button>
+        <button class="btn btn-outline-secondary">Actualizar</button>
+    </div>
+
+</div>

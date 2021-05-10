@@ -17,6 +17,7 @@ import { ConsultarArticuloComponent } from './componentes/consultar-articulo/con
 import { TarjetaUsuarioComponent } from './componentes/tarjeta-usuario/tarjeta-usuario.component';
 import { NuevoPedidoComponent } from './componentes/nuevo-pedido/nuevo-pedido.component';
 import { ConsultarPedidoComponent } from './componentes/consultar-pedido/consultar-pedido.component';
+import { TarjetaArticuloComponent } from './componentes/tarjeta-articulo/tarjeta-articulo.component';
 
 
 
@@ -34,7 +35,8 @@ import { ConsultarPedidoComponent } from './componentes/consultar-pedido/consult
     ConsultarArticuloComponent,
     TarjetaUsuarioComponent,
     NuevoPedidoComponent,
-    ConsultarPedidoComponent
+    ConsultarPedidoComponent,
+    TarjetaArticuloComponent
   ],
   imports: [
     BrowserModule,

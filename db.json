@@ -90,7 +90,70 @@
         {
           "id": 1,
           "cantidad": 12
+        },
+        {
+          "id": 2,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
         }
+        
+      ]
+    },
+    {
+      "id": 2,
+      "idUsuario": 2,
+      "nombre": "aaaaa",
+      "fecha": "12/12/2020",
+      "articulos": [
+        {
+          "id": 1,
+          "cantidad": 12
+        },
+        {
+          "id": 2,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        }
+        
+      ]
+    },
+    {
+      "id": 3,
+      "idUsuario": 3,
+      "nombre": "Nombre",
+      "fecha": "12/12/2020",
+      "articulos": [
+        {
+          "id": 1,
+          "cantidad": 12
+        },
+        {
+          "id": 2,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        }
+        
       ]
     }
   ]

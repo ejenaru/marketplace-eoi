@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Pedido } from 'src/app/clases/pedido';
 import { Usuario } from 'src/app/clases/usuario';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 

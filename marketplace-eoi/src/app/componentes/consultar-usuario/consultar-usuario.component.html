@@ -4,14 +4,6 @@
 </div>
 <section class="row">
     <div class="col col-3" *ngFor="let user of listaUsuarios">
-        <img src="../../../assets/logoeoiok_horiz_blanco.jpg" class="img-fluid">
-        <h2>{{user.nombre}}</h2>
-        <h6>Pedidos: </h6>
-        <p>Artículos top 3 pedidos:</p>
-        <ul>
-            <li>
-               Item 1 **IMPLEMENTAR** 
-            </li>
-        </ul>
+        <app-tarjeta-usuario [user]= "user"></app-tarjeta-usuario>
     </div>
 </section>

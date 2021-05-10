@@ -1,0 +1,10 @@
+<img src="../../../assets/logoeoiok_horiz_blanco.jpg" class="img-fluid">
+        <h2>{{user.nombre}}</h2>
+        <h6>Pedidos: </h6>
+        <p>Artículos top 3 pedidos:</p>
+        <p>Nº total de pedidos: {{listaPedidos.length}}</p>
+        <ul>
+            <li *ngFor = "let articulo of articulosTotal">
+               Item 1 **IMPLEMENTAR** {{articulo.nombre}}
+            </li>
+        </ul>

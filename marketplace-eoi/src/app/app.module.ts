@@ -14,6 +14,7 @@ import { NuevoUsuarioComponent } from './componentes/nuevo-usuario/nuevo-usuario
 import { ConsultarUsuarioComponent } from './componentes/consultar-usuario/consultar-usuario.component';
 import { NuevoArticuloComponent } from './componentes/nuevo-articulo/nuevo-articulo.component';
 import { ConsultarArticuloComponent } from './componentes/consultar-articulo/consultar-articulo.component';
+import { TarjetaUsuarioComponent } from './componentes/tarjeta-usuario/tarjeta-usuario.component';
 
 
 
@@ -28,7 +29,8 @@ import { ConsultarArticuloComponent } from './componentes/consultar-articulo/con
     NuevoUsuarioComponent,
     ConsultarUsuarioComponent,
     NuevoArticuloComponent,
-    ConsultarArticuloComponent
+    ConsultarArticuloComponent,
+    TarjetaUsuarioComponent
   ],
   imports: [
     BrowserModule,

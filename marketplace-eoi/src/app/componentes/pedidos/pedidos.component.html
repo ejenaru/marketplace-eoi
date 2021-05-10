@@ -1,1 +1,17 @@
-<p>pedidos works!</p>
+<section class="container">
+
+    <div class="buttonContainer">
+        <button class="btn btn-primary" (click)="toNuevo()">Nuevo</button>
+        <br>
+        <button class="btn btn-primary" (click)="toConsultar()">Consultar</button>
+    </div>
+    
+    <div class="col-9">
+        <div [ngSwitch]="actualPage">
+            <app-nuevo-pedido *ngSwitchCase="'nuevo'"></app-nuevo-pedido>
+            <app-consultar-pedido *ngSwitchCase="'consultar'"></app-consultar-pedido>
+        </div>
+    </div>
+    
+
+</section>

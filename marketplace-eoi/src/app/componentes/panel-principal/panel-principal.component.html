@@ -35,15 +35,29 @@
     <ul class="navbar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Usuario: </a>
+        <a class="nav-link">Usuario: {{loggedUserName}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Salir</a>
+        <a class="nav-link">Salir</a>
       </li>
 
     </ul>
 
   </div>
 </nav>
+
+<section class="btnContainer">
+  <a routerLink="/usuarios">
+    <button class="btn btn-outline-primary" routerLinkActive="selectedButton" [routerLinkActiveOptions]="{exact:true}">Usuarios</button>
+  </a>
+
+  <a routerLink="/articulos">
+    <button class="btn btn-outline-primary" routerLinkActive="selectedButton" [routerLinkActiveOptions]="{exact:true}">Artículos</button>
+  </a>
+
+  <a routerLink="/pedidos">
+    <button class="btn btn-outline-primary" routerLinkActive="selectedButton" [routerLinkActiveOptions]="{exact:true}">Pedidos</button>
+  </a>
+</section>
 
 <router-outlet></router-outlet>

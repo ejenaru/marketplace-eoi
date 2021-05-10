@@ -1,0 +1,84 @@
+<section class="container">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div>
+            <label>Nombre Pedido</label>
+            <input class="form-control" type="text" formControlName="pedName">
+        </div>
+
+        <div>
+            <label>Fecha Pedido</label>
+            <input class="form-control" type="date" formControlName="pedDate">
+        </div>
+
+        <div>
+            <button class="btn btn-outline-secondary">Guardar Pedido</button>
+        </div>
+
+    </form>
+
+    <br>
+    <br>
+
+    <article class="row">
+
+        <div class="col">
+            <label>Búsqueda artículo</label>
+            <input class="form-control busquedaArt" type="text">
+        </div>
+
+        <label class="col">Lista de artículos añadidos</label>
+
+        <div class="w-100"></div>
+
+        <div class="box">
+
+            <div class="col border border-light rounded" *ngFor="let art of listaArticulosPrueba">
+
+                <img src="../../../assets/logoMPart.png" alt="" width="70">
+
+                <div class="box col">
+
+                    <div>
+                        <p>Nombre artículo: {{art.nombre}}</p>
+                        <p>Stock: {{art.stock}}</p>
+
+                        <p class="row cantidad">Cantidad: <input class="form-control" type="number"></p>
+
+                    </div>
+
+                    <div class="buttonContainer">
+                        <button class="btn btn-outline-secondary">Añadir</button>
+                    </div>
+
+                </div>
+
+                <br>
+
+            </div>
+
+        </div>
+
+        <div class="box">
+
+            <div class="col" *ngFor="let art of listaArticulosPrueba">
+
+                <div class="box col boxAzul">
+
+                    <div class="row rowPedido">
+                        <p>{{art.nombre}}</p>
+                        <p>12 Uds</p>
+                    </div>
+
+                    <p class="precioLinea">Total precio línea: 120€</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</section>

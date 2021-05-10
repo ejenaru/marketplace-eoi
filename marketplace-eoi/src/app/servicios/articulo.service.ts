@@ -31,9 +31,9 @@ export class ArticuloService {
     return this.http.put<Articulo>(`${environment.BACKEND_URL}/articulo/${articulo.id}`, articulo, this.httpOptions);
   }
 
-  deleteArticulo(id:number):Observable<Articulo>{
+  deleteArticulo(id:number):Promise<Articulo>{
     //DELETE
-    return this.http.delete<Articulo>(`${environment.BACKEND_URL}/articulo/${id}`);
+    return this.http.delete<Articulo>(`${environment.BACKEND_URL}/articulo/${id}`).toPromise();
   }
 
   getArticuloList():Observable<Array<Articulo>>{

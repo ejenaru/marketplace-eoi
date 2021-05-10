@@ -36,12 +36,21 @@ export class NuevoArticuloComponent implements OnInit {
 
       }
 
-      this.articuloService.addArticulo(this.article).subscribe(
-        (articulo: Articulo) => {
-          console.log(articulo);
-        },
-        error => console.error(error)
-      )
+      if (this.article.precio < 0 || this.article.stock < 0) {
+
+        alert("El precio o el stock no pueden ser inferiores a 0");
+        
+      } else {
+
+        this.articuloService.addArticulo(this.article).subscribe(
+          (articulo: Articulo) => {
+            console.log(articulo);
+            alert('Se ha creado el artículo ' + articulo.nombre);
+          },
+          error => console.error(error)
+        )
+        
+      }
 
     } else {
       alert("No pueden haber campos vacíos");

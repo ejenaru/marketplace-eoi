@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Pedido } from 'src/app/clases/pedido';
 import { ArticuloService } from 'src/app/servicios/articulo.service';
+import { PedidoService } from 'src/app/servicios/pedido.service';
 import { Articulo } from '../../clases/articulo';
 
 @Component({
@@ -12,7 +14,16 @@ export class ConsultarArticuloComponent implements OnInit {
   artConsulting: string;
   listaArticulos: Array<Articulo>;
 
-  constructor(private articuloService: ArticuloService) { }
+  constructor(private articuloService: ArticuloService, private pedidosService: PedidoService) { }
+
+  ngOnInit(): void {
+    this.pedidosService.getPedidoList().subscribe(
+      (pedidos: Array<Pedido>) => {
+        console.log(pedidos);
+      },
+      error => console.error(error)
+    )
+  }
 
   modelChanged(artConsulting) {
 
@@ -28,10 +39,13 @@ export class ConsultarArticuloComponent implements OnInit {
       )
     }
 
-
   }
 
-  ngOnInit(): void {
+  async deleteArticulo(articulo: Articulo) {
+
+    await this.articuloService.deleteArticulo(articulo.id);
+    alert("El artículo " + articulo.nombre + " ha sido eliminado");
+    
   }
 
 }

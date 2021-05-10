@@ -1,8 +1,17 @@
 <section class="container">
-    <a routerLink="/articulos/nuevoArticulo" routerLinkActive="selectedLink" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
-        <button class="btn btn-primary">Nuevo</button>
-    </a>
-    <a routerLink="/articulos/consultarArticulos" routerLinkActive="selectedLink" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
-        <button class="btn btn-primary">Consultar</button>
-    </a>
+
+    <div class="buttonContainer">
+        <button class="btn btn-primary" (click)="toNuevo()">Nuevo</button>
+        <br>
+        <button class="btn btn-primary" (click)="toConsultar()">Consultar</button>
+    </div>
+    
+    <div class="col-9">
+        <div [ngSwitch]="actualPage">
+            <app-nuevo-articulo *ngSwitchCase="'nuevo'"></app-nuevo-articulo>
+            <app-consultar-articulo *ngSwitchCase="'consultar'"></app-consultar-articulo>
+        </div>
+    </div>
+    
+
 </section>

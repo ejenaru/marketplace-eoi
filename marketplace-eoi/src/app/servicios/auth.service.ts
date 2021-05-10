@@ -27,11 +27,15 @@ export class AuthService implements OnInit{
     this.userLogged = user;
   }
 
+  get getUserLogged():Usuario{
+    return this.userLogged;
+  }
+
   get getUserID():number{
-    return this.userLogged.id;
+    return this.userLogged[0].id;
   }
   get getUserName():string{
-    return this.userLogged.nombre;
+    return this.userLogged[0].nombre;
   }
 
   get getIsLogged():boolean{

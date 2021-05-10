@@ -1,11 +1,26 @@
 .container {
-    width: 20%;
+    /* width: 20%; */
     margin-top: 10%;
 }
 
 .artContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.btn-outline-danger {
+    margin-bottom: 7px;
+}
+
+.row {
+    margin-left: 5%;
 }

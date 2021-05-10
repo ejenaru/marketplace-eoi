@@ -1,11 +1,14 @@
 section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  /* justify-content: center; */
-    margin-top: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* background-color: blue; */
 }
 
-a {
-    width: min-content;
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  margin-top: 15%;
 }

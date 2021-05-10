@@ -16,7 +16,7 @@ export class AppComponent {
 
   checkLogin():boolean{
     //TODO
-    return this.auth.getIsLogged;
-    //return true;
+    //return this.auth.getIsLogged;
+    return true;
   }
 }

@@ -13,17 +13,60 @@ export class ConsultarArticuloComponent implements OnInit {
 
   artConsulting: string;
   listaArticulos: Array<Articulo>;
+  listaPedidos: Array<Pedido>;
+
+  articulosTotales: number = 0;
 
   constructor(private articuloService: ArticuloService, private pedidosService: PedidoService) { }
 
   ngOnInit(): void {
     this.pedidosService.getPedidoList().subscribe(
       (pedidos: Array<Pedido>) => {
-        console.log(pedidos);
+        this.listaPedidos = pedidos;
+        //console.log(this.listaPedidos);
+
+        for (const pedido of pedidos) {
+          for (const iterator of pedido.articulos) {
+
+            //console.log(iterator);
+
+            // if (iterator.id == 1) {
+            //   this.articulosTotales += iterator.cantidad;
+            //   console.log(this.articulosTotales);
+            // }
+
+            this.articuloService.getArticuloWithID(iterator.id).subscribe(
+              (articulo: Articulo) => {
+                //this.listaArticulos.push(articulo);
+                console.log(articulo);
+              },
+              error => console.error(error)
+            )
+
+
+
+
+          }
+        }
+
       },
       error => console.error(error)
     )
+
+    //console.log(this.articulosTotales);
+
+
   }
+
+  // async getArticulo(id: number) {
+
+  //   let articulo: Articulo;
+
+  //   articulo = await this.articuloService.getArticuloWithID(id);
+
+  //   return articulo;
+
+  // }
 
   modelChanged(artConsulting) {
 
@@ -39,13 +82,6 @@ export class ConsultarArticuloComponent implements OnInit {
       )
     }
 
-  }
-
-  async deleteArticulo(articulo: Articulo) {
-
-    await this.articuloService.deleteArticulo(articulo.id);
-    alert("El artículo " + articulo.nombre + " ha sido eliminado");
-    
   }
 
 }

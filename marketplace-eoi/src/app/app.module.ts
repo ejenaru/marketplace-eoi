@@ -18,6 +18,7 @@ import { TarjetaUsuarioComponent } from './componentes/tarjeta-usuario/tarjeta-u
 import { NuevoPedidoComponent } from './componentes/nuevo-pedido/nuevo-pedido.component';
 import { ConsultarPedidoComponent } from './componentes/consultar-pedido/consultar-pedido.component';
 import { TarjetaPedidoComponent } from './componentes/tarjeta-pedido/tarjeta-pedido.component';
+import { TarjetaArticuloComponent } from './componentes/tarjeta-articulo/tarjeta-articulo.component';
 
 
 
@@ -36,7 +37,8 @@ import { TarjetaPedidoComponent } from './componentes/tarjeta-pedido/tarjeta-ped
     TarjetaUsuarioComponent,
     NuevoPedidoComponent,
     ConsultarPedidoComponent,
-    TarjetaPedidoComponent
+    TarjetaPedidoComponent,
+    TarjetaArticuloComponent
   ],
   imports: [
     BrowserModule,

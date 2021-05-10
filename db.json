@@ -87,21 +87,33 @@
       "precio": 7,
       "stock": 6,
       "id": 6
-    },
-    {
-      "nombre": "aaa",
-      "precio": 55,
-      "stock": 11,
-      "id": 7
-    },
-    {
-      "nombre": "Manzana",
-      "precio": 123,
-      "stock": 100,
-      "id": 8
     }
   ],
   "pedido": [
+    {
+      "id": 1,
+      "idUsuario": 1,
+      "nombre": "Nombre",
+      "fecha": "12/12/2020",
+      "articulos": [
+        {
+          "id": 1,
+          "cantidad": 12
+        },
+        {
+          "id": 2,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        },
+        {
+          "id": 3,
+          "cantidad": 12
+        }
+      ]
+    },
     {
       "id": 2,
       "idUsuario": 2,
@@ -147,6 +159,18 @@
         {
           "id": 3,
           "cantidad": 12
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "idUsuario": 1,
+      "nombre": "Ped4",
+      "fecha": "12/12/2020",
+      "articulos": [
+        {
+          "id": 1,
+          "cantidad": 5
         }
       ]
     }

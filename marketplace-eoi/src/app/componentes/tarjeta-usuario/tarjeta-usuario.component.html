@@ -1,10 +1,21 @@
 <img src="../../../assets/logoeoiok_horiz_blanco.jpg" class="img-fluid">
-        <h2>{{user.nombre}}</h2>
+<h2>{{user.nombre}}</h2>
+<div class="row">
+    <div class="col">
         <h6>Pedidos: </h6>
         <p>Artículos top 3 pedidos:</p>
         <p>Nº total de pedidos: {{listaPedidos.length}}</p>
         <ul>
-            <li *ngFor = "let articulo of articulosTotal">
-               Item 1 **IMPLEMENTAR** {{articulo.nombre}}
+            <li *ngFor="let articulo of articulosTotal">
+                Item 1 **IMPLEMENTAR** {{articulo.nombre}}
             </li>
         </ul>
+    </div>
+    <div class="col">
+        <div class="d-inline-flex flex-column align-items-center">
+            <button class="block" (click)="borrar()">Borrar</button>
+            <br>
+            <button class="block" (click)="actualizar()">Consultar</button>
+        </div>
+    </div>
+</div>

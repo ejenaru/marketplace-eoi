@@ -21,11 +21,6 @@
       "id": 4
     },
     {
-      "nombre": "asd",
-      "password": "asd",
-      "id": 5
-    },
-    {
       "nombre": "Irene",
       "password": "qwe",
       "id": 6
@@ -34,6 +29,26 @@
       "nombre": "Pepe",
       "password": "gsd",
       "id": 7
+    },
+    {
+      "nombre": "Alberto",
+      "password": "Paco",
+      "id": 8
+    },
+    {
+      "nombre": "Antonio",
+      "password": "Paco",
+      "id": 9
+    },
+    {
+      "nombre": "Alejandro",
+      "password": "asdasdasd",
+      "id": 10
+    },
+    {
+      "nombre": "Pepe",
+      "password": "asdasfgafas",
+      "id": 11
     }
   ],
   "articulo": [
@@ -78,34 +93,15 @@
       "precio": 55,
       "stock": 11,
       "id": 7
+    },
+    {
+      "nombre": "Manzana",
+      "precio": 123,
+      "stock": 100,
+      "id": 8
     }
   ],
   "pedido": [
-    {
-      "id": 1,
-      "idUsuario": 1,
-      "nombre": "Nombre",
-      "fecha": "12/12/2020",
-      "articulos": [
-        {
-          "id": 1,
-          "cantidad": 12
-        },
-        {
-          "id": 2,
-          "cantidad": 12
-        },
-        {
-          "id": 3,
-          "cantidad": 12
-        },
-        {
-          "id": 3,
-          "cantidad": 12
-        }
-        
-      ]
-    },
     {
       "id": 2,
       "idUsuario": 2,
@@ -128,7 +124,6 @@
           "id": 3,
           "cantidad": 12
         }
-        
       ]
     },
     {
@@ -153,7 +148,6 @@
           "id": 3,
           "cantidad": 12
         }
-        
       ]
     }
   ]

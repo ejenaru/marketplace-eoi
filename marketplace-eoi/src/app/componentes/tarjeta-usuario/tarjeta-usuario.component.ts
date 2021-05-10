@@ -24,33 +24,45 @@ export class TarjetaUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArrayPedidos(this.user.id);
-    console.log(this.listaPedidos)
     
-    this.articulosTotal = this.getEveryArticulosID();
+    //this.articulosTotal = this.getEveryArticulosID();
+    console.log(this.articulosTotal)
   }
 
+  //Devuelve todos los pedidos del usuario en cuestion
   async getArrayPedidos(id:number){
     this.listaPedidos = await this.pedidoService.getPedidosFromUser(id);
   }
 
-  getEveryArticulosID():Array<Articulo>{
-    let totalArticulos: Array<Articulo> = new Array<Articulo>();
+  // getEveryArticulosID():Array<Articulo>{
+  //   let totalArticulos: Array<Articulo> = new Array<Articulo>();
 
-    for (let pedido of this.listaPedidos){
-      for (let articulo of pedido.articulos){
-        totalArticulos.push(this.getArticuloWithID(articulo.id));
-      }
-    }
-    return totalArticulos;
+  //   for (let pedido of this.listaPedidos){
+  //     for (let articulo of pedido.articulos){
+  //       totalArticulos.push(this.getArticuloWithID(articulo.id));
+  //     }
+  //   }
+  //   return totalArticulos;
+  // }
+
+  // getArticuloWithID(id:number): Articulo{
+  //   let articulo:Articulo;
+
+  //   this.articuloService.getArticuloWithID(1).subscribe(
+  //     ok => console.log(ok)
+  //   )
+  //   return articulo;
+
+  // }
+
+  borrar(){
+    this.userService.deleteUser(this.user.id).subscribe(
+      ok => console.log(ok)
+    );
+    alert("Usuario Borrado correctamente");
   }
 
-  getArticuloWithID(id:number): Articulo{
-    let articulo:Articulo;
-
-    this.articuloService.getArticuloWithID(id).subscribe(
-      ok => articulo = ok
-    );
-    return articulo;
+  actualizar(){
 
   }
 

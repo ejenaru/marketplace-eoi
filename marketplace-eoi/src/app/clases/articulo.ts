@@ -10,4 +10,6 @@ export class Articulo {
             this.precio = precio;
             this.stock = stock;
     }
+
+    
 }

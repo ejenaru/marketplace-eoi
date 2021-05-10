@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/clases/pedido';
+import { PedidoService } from 'src/app/servicios/pedido.service';
 
 @Component({
   selector: 'app-consultar-pedido',
@@ -7,68 +8,28 @@ import { Pedido } from 'src/app/clases/pedido';
   styleUrls: ['./consultar-pedido.component.css']
 })
 export class ConsultarPedidoComponent implements OnInit {
+  nombrePedido:string;
 
-  clickedElement: Pedido;
+  listaPedidos: Array<Pedido>;
 
-  listaPedPrueba: Array<Pedido> = [
-    {
-      "id": 1,
-      "idUsuario": 1,
-      "nombre": "Ped1",
-      "fecha": "12/12/2020",
-      "articulos": [
-        {
-          "id": 1,
-          "cantidad": 12
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "idUsuario": 1,
-      "nombre": "Ped2",
-      "fecha": "12/12/2020",
-      "articulos": [
-        {
-          "id": 1,
-          "cantidad": 10
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "idUsuario": 1,
-      "nombre": "Ped3",
-      "fecha": "12/12/2020",
-      "articulos": [
-        {
-          "id": 2,
-          "cantidad": 12
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "idUsuario": 3,
-      "nombre": "Ped4",
-      "fecha": "12/12/2020",
-      "articulos": [
-        {
-          "id": 2,
-          "cantidad": 5
-        }
-      ]
-    }
-  ];
-
-  constructor() {}
+  constructor(private pedidoService:PedidoService) {}
 
   ngOnInit(): void {
     
   }
-
-  clicked(ped: Pedido) {
-    this.clickedElement = ped;
+  onChange(){
+    if(this.nombrePedido == ""){
+      this.listaPedidos = [];
+    }else{
+      this.getArrayPedidos(this.nombrePedido);
+    };
   }
+
+  getArrayPedidos(name:string){
+    this.pedidoService.getPedidoLike(name).subscribe(
+      ok => {this.listaPedidos = ok}
+    )
+  }
+
 
 }

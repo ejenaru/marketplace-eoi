@@ -1,0 +1,20 @@
+<div>
+    <h2>{{ped.nombre}}</h2>
+
+    <p>Fecha: {{ped.fecha | date}}</p>
+    <p>Total Pedido: {{getTotal() | currency:'EUR':true}}</p>
+</div>
+
+<div class="border border-light rounded">
+ 
+
+    <div class="border rounded" *ngFor="let art of listaArticulos">
+        <p class="articulo">{{art[0].nombre}} x {{art[1]}}</p>
+    </div>
+
+</div>
+
+<div class="buttonContainer">
+    <button class="btn btn btn-outline-danger" (click)="delete()">Eliminar</button>
+    <button class="btn btn-outline-secondary" (click)="update()">Actualizar</button>
+</div>

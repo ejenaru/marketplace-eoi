@@ -1,32 +1,13 @@
 <section class="container">
 
     <label>Nombre Pedido</label>
-    <input class="form-control" type="text">
+    <input class="form-control" type="text" [(ngModel)]="nombrePedido" (ngModelChange)="onChange()">
 
     <article class="pedContainer row">
-        <section *ngFor="let ped of listaPedPrueba">
-
-            <div>
-                <h2>{{ped.nombre}}</h2>
-
-                <p>Fecha: {{ped.fecha}}</p>
-                <p>Total Pedido: 200 €</p>
-            </div>
-
-            <div class="border border-light rounded">
-
-                <div class="border rounded" *ngFor="let ped of listaPedPrueba" [class.selected]="clickedElement ===  ped" (click)="clicked(ped)">
-                    <p class="articulo">{{ped.nombre}} x 10</p>
-                </div>
-
-            </div>
-
-            <div class="buttonContainer">
-                <button class="btn btn btn-outline-danger">Eliminar</button>
-                <button class="btn btn-outline-secondary">Actualizar</button>
-            </div>
-
-        </section>
+        <div *ngFor ="let pedido of listaPedidos">
+            <app-tarjeta-pedido [ped] = "pedido"></app-tarjeta-pedido>
+        </div>
+        
     </article>
 
 </section>

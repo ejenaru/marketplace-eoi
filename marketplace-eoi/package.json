@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "crear componente": "ng g c -m app.module componentes/TarjetaUsuario",
+    "crear componente": "ng g c -m app.module componentes/TarjetaPedido",
     "crear pipe": "ng g p pipes/Nueva",
     "crear interfaz": "ng g i interfaces/NuevaInterfaz",
     "crear servicio": "ng g s servicios/Auth",

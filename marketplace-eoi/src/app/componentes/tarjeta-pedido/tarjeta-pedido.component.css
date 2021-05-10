@@ -1,0 +1,20 @@
+.container {
+    /* width: 50%; */
+    margin-top: 10%;
+}
+
+article section {
+    margin-left: 15px;
+}
+
+.selected {
+    background-color: rgb(0, 153, 255);
+}
+
+.articulo {
+    text-align: center;
+}
+
+.buttonContainer {
+    margin-top: 5px;
+}

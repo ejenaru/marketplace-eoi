@@ -19,6 +19,7 @@ import { NuevoPedidoComponent } from './componentes/nuevo-pedido/nuevo-pedido.co
 import { ConsultarPedidoComponent } from './componentes/consultar-pedido/consultar-pedido.component';
 import { TarjetaPedidoComponent } from './componentes/tarjeta-pedido/tarjeta-pedido.component';
 import { TarjetaArticuloComponent } from './componentes/tarjeta-articulo/tarjeta-articulo.component';
+import { TotalesPipe } from './pipes/totales.pipe';
 
 
 
@@ -38,7 +39,8 @@ import { TarjetaArticuloComponent } from './componentes/tarjeta-articulo/tarjeta
     NuevoPedidoComponent,
     ConsultarPedidoComponent,
     TarjetaPedidoComponent,
-    TarjetaArticuloComponent
+    TarjetaArticuloComponent,
+    TotalesPipe
   ],
   imports: [
     BrowserModule,

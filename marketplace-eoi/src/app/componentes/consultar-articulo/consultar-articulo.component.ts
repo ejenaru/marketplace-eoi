@@ -12,61 +12,36 @@ import { Articulo } from '../../clases/articulo';
 export class ConsultarArticuloComponent implements OnInit {
 
   artConsulting: string;
-  listaArticulos: Array<Articulo>;
-  listaPedidos: Array<Pedido>;
+  listaArticulos: Array<Articulo> = new Array<Articulo>();
 
-  articulosTotales: number = 0;
+  mapa = new Map();
 
   constructor(private articuloService: ArticuloService, private pedidosService: PedidoService) { }
 
   ngOnInit(): void {
+    //Otra forma de contar los articulos de los pedidos(envia mapa al hijo).
+    //this.mapArticles();
+  }
+
+  mapArticles(): void {
+
     this.pedidosService.getPedidoList().subscribe(
       (pedidos: Array<Pedido>) => {
-        this.listaPedidos = pedidos;
-        //console.log(this.listaPedidos);
 
         for (const pedido of pedidos) {
-          for (const iterator of pedido.articulos) {
-
-            //console.log(iterator);
-
-            // if (iterator.id == 1) {
-            //   this.articulosTotales += iterator.cantidad;
-            //   console.log(this.articulosTotales);
-            // }
-
-            this.articuloService.getArticuloWithID(iterator.id).subscribe(
-              (articulo: Articulo) => {
-                //this.listaArticulos.push(articulo);
-                console.log(articulo);
-              },
-              error => console.error(error)
-            )
-
-
-
-
+          for (const articulo of pedido.articulos) {
+            if (!this.mapa.has(articulo.id)) {
+              this.mapa.set(articulo.id,articulo.cantidad);
+            } else {
+              this.mapa.set(articulo.id,this.mapa.get(articulo.id)+articulo.cantidad);
+            }
           }
         }
-
       },
       error => console.error(error)
     )
 
-    //console.log(this.articulosTotales);
-
-
   }
-
-  // async getArticulo(id: number) {
-
-  //   let articulo: Articulo;
-
-  //   articulo = await this.articuloService.getArticuloWithID(id);
-
-  //   return articulo;
-
-  // }
 
   modelChanged(artConsulting) {
 

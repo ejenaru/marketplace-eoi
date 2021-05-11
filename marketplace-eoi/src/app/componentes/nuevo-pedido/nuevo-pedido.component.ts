@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Articulo } from 'src/app/clases/articulo';
+import { Pedido } from 'src/app/clases/pedido';
 import { ArticuloService } from 'src/app/servicios/articulo.service';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { PedidoService } from 'src/app/servicios/pedido.service';
 
 @Component({
   selector: 'app-nuevo-pedido',
@@ -16,9 +19,9 @@ export class NuevoPedidoComponent implements OnInit {
 
   //array de articulos para el pedido
 
-  //1 pedido que es el que va a hacer el submit
+  pedido: Pedido;
 
-  constructor(fb: FormBuilder, private articuloService: ArticuloService) {
+  constructor(fb: FormBuilder, private articuloService: ArticuloService, private pedidoService: PedidoService, private authService: AuthService) {
     this.form = fb.group({
       "pedName": ["", Validators.required],
       "pedDate": ["", Validators.required]
@@ -54,7 +57,17 @@ export class NuevoPedidoComponent implements OnInit {
     //TODO
   }
 
-  //fabricar pedido
+  postPedido(pedido: Pedido) {
+
+    this.pedidoService.addPedido(pedido).subscribe(
+      (pedido: Pedido)  => {
+        console.log(pedido);
+        alert('Se ha creado el pedido ' + pedido.nombre);
+      },
+      error => console.error(error)
+    )
+
+  }
 
   onSubmit() {
 
@@ -62,6 +75,18 @@ export class NuevoPedidoComponent implements OnInit {
       //fabricar pedido
       //atributo pedido
       //TODO PUT NEW PEDIDO
+
+      this.pedido = {
+        idUsuario: this.authService.getUserID,
+        nombre: this.form.value["pedName"],
+        fecha: this.form.value["pedDate"],
+        articulos: [{
+          id: 1,
+          cantidad: 12
+        }]
+      };
+
+      console.log(this.authService.getUserID);
 
       console.log(this.form.value["pedDate"].replaceAll("-","/"));
 

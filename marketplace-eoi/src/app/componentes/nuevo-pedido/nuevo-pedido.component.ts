@@ -35,6 +35,10 @@ export class NuevoPedidoComponent implements OnInit {
     //GET LISTA ARTICULOS en array de articulos para el pedido
   }
 
+  getArticulosEnElPedido(){
+    return Array.from(this.articulosEnElPedido.entries());
+  }
+
   onChange(){
     this.articuloService.getLikedArticuloList(this.busquedaArticulo).subscribe(
       lista=>{
@@ -65,6 +69,7 @@ export class NuevoPedidoComponent implements OnInit {
         ok=> {
           console.log(ok)
           alert(`Ha añadido ${cantidad} ud de ${ok.nombre}`)
+          this.onChange();
         }
       )
     }
@@ -79,7 +84,7 @@ export class NuevoPedidoComponent implements OnInit {
       let nuevaCantidad:number = (this.articulosEnElPedido.get(art.id) + cantidad);
       console.log(nuevaCantidad)
       this.articulosEnElPedido.set(art.id,nuevaCantidad)
-      this.onChange();
+      
     }
     
   }

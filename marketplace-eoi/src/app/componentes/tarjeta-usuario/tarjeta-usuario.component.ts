@@ -72,6 +72,8 @@ export class TarjetaUsuarioComponent implements OnInit {
 
   }
 
+  
+
   getTop3(){
     //sort toma como parámetro una función que devuelve <0 si los valores no están ordenados
     //>0 si los valores están ordenados

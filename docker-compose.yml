@@ -1,0 +1,22 @@
+version: "3.3"
+services: 
+    back:
+        container_name: backg1
+        build:
+            context: ./
+            dockerfile: DockerfileBack
+        environment: 
+            ENTORNO: ESTE ES EL BACK NODEJS
+        ports: 
+            - "23001:3000"
+    front:
+        container_name: frontg1
+        build:
+            context: ./
+            dockerfile: DockerfileFront
+        environment: 
+            ENTORNO: ESTE ES EL FRONT ANGULAR
+            URLBACK: 'http://appstic.eu:23001'
+        ports: 
+            - "20081:80"
+

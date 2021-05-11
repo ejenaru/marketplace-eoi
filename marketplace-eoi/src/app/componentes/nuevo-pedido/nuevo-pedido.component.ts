@@ -12,6 +12,12 @@ export class NuevoPedidoComponent implements OnInit {
 
   form: FormGroup;
 
+  //NGMODEL
+
+  //array de articulos para el pedido
+
+  //1 pedido que es el que va a hacer el submit
+
   constructor(fb: FormBuilder, private articuloService: ArticuloService) {
     this.form = fb.group({
       "pedName": ["", Validators.required],
@@ -20,6 +26,7 @@ export class NuevoPedidoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //GET LISTA ARTICULOS en array de articulos para el pedido
   }
 
   listaArticulosPrueba: Array<Articulo> = [
@@ -43,11 +50,20 @@ export class NuevoPedidoComponent implements OnInit {
     }
   ];
 
+  addArticulo(){
+    //TODO
+  }
+
+  //fabricar pedido
+
   onSubmit() {
 
     if (this.form.valid) {
+      //fabricar pedido
+      //atributo pedido
+      //TODO PUT NEW PEDIDO
 
-      console.log(this.form.value["pedDate"]);
+      console.log(this.form.value["pedDate"].replaceAll("-","/"));
 
     } else {
       alert("No pueden haber campos vacíos");

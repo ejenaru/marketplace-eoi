@@ -1,7 +1,7 @@
 import { Usuario } from "./usuario";
 
 export class Pedido {
-    id:number;
+    id?:number;
     idUsuario:number;
     nombre:string;
     fecha:string;

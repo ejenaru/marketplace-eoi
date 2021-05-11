@@ -17,6 +17,8 @@ export class TarjetaPedidoComponent implements OnInit {
 
   listaArticulos:Array<[Articulo, number]> = new Array<[Articulo, number]>();
 
+  clickedItem: number = undefined;
+
   constructor(private articuloService: ArticuloService, private pedidoService:PedidoService) {
   }
 
@@ -53,5 +55,17 @@ export class TarjetaPedidoComponent implements OnInit {
     this.pedidoService.updatePedido(this.ped).subscribe(
       ok=> alert(`Pedido ${ok.nombre} actualizado`)
     );
+  }
+
+  clickItem(id: number) {
+    this.clickedItem = id;
+    for (const iterator in this.listaArticulos) {
+
+      console.log(iterator);
+      
+      
+    }
+    //console.log(this.listaArticulos.indexOf([art]));
+    
   }
 }

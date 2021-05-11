@@ -1,14 +1,14 @@
 <div>
     <h2>{{ped.nombre}}</h2>
 
-    <p>Fecha: {{ped.fecha | date}}</p>
+    <p>Fecha: {{ped.fecha | date:'d/MM/yyyy'}}</p>
     <p>Total Pedido: {{getTotal() | currency:'EUR':true}}</p>
 </div>
 
 <div class="border border-light rounded">
  
 
-    <div class="border rounded" *ngFor="let art of listaArticulos">
+    <div class="border rounded" [ngClass]="clickedItem == art[0].id ? 'selected' : 'none'" (click)="clickItem(art)" *ngFor="let art of listaArticulos">
         <p class="articulo">{{art[0].nombre}} x {{art[1]}}</p>
     </div>
 

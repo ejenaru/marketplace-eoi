@@ -11,6 +11,10 @@ article section {
     background-color: rgb(0, 153, 255);
 }
 
+.none {
+    background-color: unset;
+}
+
 .articulo {
     text-align: center;
 }

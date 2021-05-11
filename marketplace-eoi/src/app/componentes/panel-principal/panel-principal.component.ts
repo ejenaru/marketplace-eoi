@@ -25,7 +25,7 @@ export class PanelPrincipalComponent implements OnInit {
   ngOnInit(): void {
 
     this.loggedUserName = this.authService.getUserName;
-
+    
     this.setNumberOfUsers();
     this.setNumberOfArticles();
     this.setNumberOfOrders();
@@ -63,6 +63,11 @@ export class PanelPrincipalComponent implements OnInit {
       err => console.error(err)
     )
 
+  }
+
+  logout() {
+    this.authService.setIsLogged(false);
+    this.authService.setUserLogged(undefined);
   }
 
 }

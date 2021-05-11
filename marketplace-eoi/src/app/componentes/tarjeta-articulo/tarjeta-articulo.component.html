@@ -6,7 +6,7 @@
         <h2>{{art.nombre}}</h2>
 
         <p>Stock: {{art.stock}}</p>
-        <p>Precio: {{art.precio}} €</p>
+        <p>Precio: {{art.precio | currency:'EUR':true}}</p>
         <p>Pedido {{cantidadArticulo}} veces</p>
     </div>
 

@@ -25,7 +25,7 @@
 
         <div class="col">
             <label>Búsqueda artículo</label>
-            <input class="form-control busquedaArt" type="text">
+            <input class="form-control busquedaArt" type="text" [(ngModel)]="busquedaArticulo" (ngModelChange)="onChange()">
         </div>
 
         <label class="col">Lista de artículos añadidos</label>
@@ -34,7 +34,7 @@
 
         <div class="box">
 
-            <div class="col border border-light rounded" *ngFor="let art of listaArticulosPrueba">
+            <div class="col border border-light rounded" *ngFor="let art of articulosEncontrados">
 
                 <img src="../../../assets/logoMPart.png" alt="" width="70">
 
@@ -44,12 +44,12 @@
                         <p>Nombre artículo: {{art.nombre}}</p>
                         <p>Stock: {{art.stock}}</p>
 
-                        <p class="row cantidad">Cantidad: <input class="form-control" type="number"></p>
+                        <p class="row cantidad">Cantidad: <input #cantidad class="form-control" type="number"></p>
 
                     </div>
 
                     <div class="buttonContainer">
-                        <button class="btn btn-outline-secondary" (click)="addArticulo()">Añadir</button>
+                        <button class="btn btn-outline-secondary" (click)="addArticulo(art, cantidad.value)">Añadir</button>
                     </div>
 
                 </div>
@@ -62,13 +62,13 @@
 
         <div class="box">
 
-            <div class="col" *ngFor="let art of listaArticulosPrueba">
+            <div class="col" *ngFor="let art of articulosEnElPedido">
 
                 <div class="box col boxAzul">
 
                     <div class="row rowPedido">
-                        <p>{{art.nombre}}</p>
-                        <p>12 Uds</p>
+                        <p>{{art[0].nombre}}</p>
+                        <p>Cantidad: {{art[1]}}</p>
                     </div>
 
                     <p class="precioLinea">Total precio línea: 120€</p>

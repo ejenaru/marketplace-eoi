@@ -13,8 +13,11 @@ export class NuevoPedidoComponent implements OnInit {
   form: FormGroup;
 
   //NGMODEL
+  busquedaArticulo:string;
+  articulosEncontrados:Array<Articulo> = new Array<Articulo>();
 
   //array de articulos para el pedido
+  articulosEnElPedido:Array<[Articulo,number]> = new Array<[Articulo,number]>();
 
   //1 pedido que es el que va a hacer el submit
 
@@ -29,29 +32,35 @@ export class NuevoPedidoComponent implements OnInit {
     //GET LISTA ARTICULOS en array de articulos para el pedido
   }
 
-  listaArticulosPrueba: Array<Articulo> = [
-    {
-      "nombre": "Artículo 1",
-      "precio": 10,
-      "stock": 15,
-      "id": 1
-    },
-    {
-      "nombre": "Artículo 2",
-      "precio": 2,
-      "stock": 10,
-      "id": 2
-    },
-    {
-      "nombre": "Artículo 3",
-      "precio": 2,
-      "stock": 10,
-      "id": 3
-    }
-  ];
+  onChange(){
+    this.articuloService.getLikedArticuloList(this.busquedaArticulo).subscribe(
+      lista=>{
+        if (this.busquedaArticulo == ""){
+          this.articulosEncontrados = [];
+        }else{
+          this.articulosEncontrados = lista;
+        }
 
-  addArticulo(){
+      }
+    )
+  }
+
+  addArticulo(art:Articulo, cantidad:number){
     //TODO
+    //UPDATE EL STOCK DEL ARTICULO
+    console.log(art, cantidad)
+
+    if (cantidad > art.stock){
+      alert("No tenemos tanto stock!!")
+    }else{
+      let nuevoStock:number = art.stock - cantidad;
+      let articuloActualizado:Articulo = new Articulo(art.nombre,art.precio, nuevoStock, art.id);
+      this.articuloService.updateArticulo(articuloActualizado).subscribe(
+        ok=> console.log(ok)
+      )
+    }
+
+    //if no hay suficiente, mostrar alerta
   }
 
   //fabricar pedido

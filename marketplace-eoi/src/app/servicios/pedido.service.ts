@@ -41,8 +41,8 @@ export class PedidoService {
     return this.http.get<Array<Pedido>>(`${environment.BACKEND_URL}/pedido`);
   }
 
-  getPedidosFromUser(id:number):Promise<Array<Pedido>>{
-    return this.http.get<Array<Pedido>>(`${environment.BACKEND_URL}/pedido?idUsuario=${id}`).toPromise();
+  getPedidosFromUser(id:number):Observable<Array<Pedido>>{
+    return this.http.get<Array<Pedido>>(`${environment.BACKEND_URL}/pedido?idUsuario=${id}`);
   }
 
   getPedidoLike(nombre:string):Observable<Array<Pedido>>{

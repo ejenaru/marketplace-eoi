@@ -61,7 +61,7 @@
       "id": 1,
       "nombre": "Mass Efect",
       "precio": 20,
-      "stock": 16
+      "stock": 12
     },
     {
       "id": 2,
@@ -73,7 +73,7 @@
       "id": 3,
       "nombre": "Resident Evil Village",
       "precio": 100,
-      "stock": 299
+      "stock": 298
     },
     {
       "id": 4,
@@ -206,6 +206,34 @@
           "cantidad": 3
         }
       ]
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "Pedido de Prueba",
+      "fecha": "2021-05-12",
+      "articulos": [
+        {
+          "id": 1,
+          "cantidad": 2
+        },
+        {
+          "id": 3,
+          "cantidad": 1
+        }
+      ],
+      "id": 6
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "nombre",
+      "fecha": "2021-05-05",
+      "articulos": [
+        {
+          "id": 1,
+          "cantidad": 2
+        }
+      ],
+      "id": 7
     }
   ]
 }

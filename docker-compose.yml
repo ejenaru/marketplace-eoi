@@ -16,7 +16,7 @@ services:
             dockerfile: DockerfileFront
         environment: 
             ENTORNO: ESTE ES EL FRONT ANGULAR
-            URLBACK: 'http://appstic.eu:20181'
+            URLBACK: 'http://appstic.eu:23001'
         ports: 
             - "20081:80"
 

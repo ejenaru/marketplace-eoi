@@ -111,7 +111,7 @@ export class NuevoPedidoComponent implements OnInit {
 
       this.pedido = new Pedido( this.authService.getUserID,
         this.form.value["pedName"],
-        this.form.value["pedDate"],
+        this.form.value["pedDate"].replaceAll("-","/"),
         this.pruebaMap);
 
       //console.log(this.pedido);

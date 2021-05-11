@@ -3,13 +3,14 @@
 <div class="row">
     <div class="col">
         <h6>Pedidos: </h6>
-        <p>Artículos top 3 pedidos:</p>
-        <p>Nº total de pedidos: {{listaPedidos.length}}</p>
-        <ul>
-            <li *ngFor="let articulo of articulosTotal">
-                Item 1 **IMPLEMENTAR** {{articulo.nombre}}
+        <ol>
+            Artículos top 3 pedidos
+            <li *ngFor="let articulo of top3">
+                {{articulo.nombre}}
             </li>
-        </ul>
+        </ol>
+        <p>Nº total de pedidos: {{listaPedidos.length}}</p>
+        
     </div>
     <div class="col">
         <div class="d-inline-flex flex-column align-items-center">

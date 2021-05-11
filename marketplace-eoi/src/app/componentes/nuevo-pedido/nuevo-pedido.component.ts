@@ -20,7 +20,7 @@ export class NuevoPedidoComponent implements OnInit {
   articulosEncontrados:Array<Articulo> = new Array<Articulo>();
 
   //array de articulos para el pedido
-  articulosEnElPedido:Array<[Articulo,number]> = new Array<[Articulo,number]>();
+  articulosEnElPedido:Map<number,number> = new Map<number,number>();
 
   pedido: Pedido;
 
@@ -51,19 +51,37 @@ export class NuevoPedidoComponent implements OnInit {
   addArticulo(art:Articulo, cantidad:number){
     //TODO
     //UPDATE EL STOCK DEL ARTICULO
-    console.log(art, cantidad)
+    cantidad = Number(cantidad);
 
     if (cantidad > art.stock){
-      alert("No tenemos tanto stock!!")
+      alert("¡¡No tenemos tanto stock!!")
+    }else if(cantidad <= 0){
+      alert("No ha añadido nada")
     }else{
+      this.setCantidad(art, cantidad);
       let nuevoStock:number = art.stock - cantidad;
       let articuloActualizado:Articulo = new Articulo(art.nombre,art.precio, nuevoStock, art.id);
       this.articuloService.updateArticulo(articuloActualizado).subscribe(
-        ok=> console.log(ok)
+        ok=> {
+          console.log(ok)
+          alert(`Ha añadido ${cantidad} ud de ${ok.nombre}`)
+        }
       )
     }
 
     //if no hay suficiente, mostrar alerta
+  }
+
+  setCantidad(art:Articulo,cantidad:number){
+    if(!this.articulosEnElPedido.has(art.id)){
+      this.articulosEnElPedido.set(art.id,cantidad)
+    }else{
+      let nuevaCantidad:number = (this.articulosEnElPedido.get(art.id) + cantidad);
+      console.log(nuevaCantidad)
+      this.articulosEnElPedido.set(art.id,nuevaCantidad)
+      this.onChange();
+    }
+    
   }
 
   postPedido(pedido: Pedido) {

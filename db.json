@@ -62,19 +62,19 @@
       "id": 2,
       "nombre": "Art1",
       "precio": 1,
-      "stock": 4
+      "stock": 0
     },
     {
+      "id": 3,
       "nombre": "Art2",
       "precio": 8,
-      "stock": 12,
-      "id": 3
+      "stock": 6
     },
     {
+      "id": 4,
       "nombre": "hola",
       "precio": 7,
-      "stock": 6,
-      "id": 4
+      "stock": 5
     },
     {
       "nombre": "hola",

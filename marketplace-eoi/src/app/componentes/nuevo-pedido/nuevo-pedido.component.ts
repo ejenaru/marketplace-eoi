@@ -101,24 +101,23 @@ export class NuevoPedidoComponent implements OnInit {
 
   }
 
+  pruebaMap: Array<[number,number]>;
+
   onSubmit() {
 
     if (this.form.valid) {
-      //fabricar pedido
-      //atributo pedido
-      //TODO PUT NEW PEDIDO
 
-      this.pedido = {
-        idUsuario: this.authService.getUserID,
-        nombre: this.form.value["pedName"],
-        fecha: this.form.value["pedDate"],
-        articulos: [{
-          id: 1,
-          cantidad: 12
-        }]
-      };
+      this.pruebaMap = Array.from(this.articulosEnElPedido.entries());
 
-      console.log(this.authService.getUserID);
+      this.pedido = new Pedido( this.authService.getUserID,
+        this.form.value["pedName"],
+        this.form.value["pedDate"],
+        this.pruebaMap);
+
+      //console.log(this.pedido);
+      //console.log(this.articulosEnElPedido);
+      this.postPedido(this.pedido);
+      
 
       console.log(this.form.value["pedDate"].replaceAll("-","/"));
 

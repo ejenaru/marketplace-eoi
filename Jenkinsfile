@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
-                branch 'GRA'
+                branch 'G1'
             }
             steps {
                  echo "Generando proyecto Angular Front"

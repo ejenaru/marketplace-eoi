@@ -1,3 +1,7 @@
+.datosArt {
+    margin-top: 7px;
+}
+
 .buttonContainer {
     display: flex;
     flex-direction: column;

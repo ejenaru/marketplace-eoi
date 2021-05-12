@@ -8,7 +8,7 @@
 <div class="border border-light rounded">
  
 
-    <div class="border rounded" [ngClass]="clickedItem == art[0].id ? 'selected' : 'none'" (click)="clickItem(art[0].id)" *ngFor="let art of listaArticulos">
+    <div class="border rounded artContainer" [ngClass]="clickedItem == art[0].id ? 'selected' : 'none'" (click)="clickItem(art[0].id)" *ngFor="let art of listaArticulos">
         <p class="articulo">{{art[0].nombre}} x {{art[1]}}</p>
     </div>
 

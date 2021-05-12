@@ -15,11 +15,11 @@ export class TarjetaPedidoComponent implements OnInit {
 
   precioTotal: number = 0;
 
-  listaArticulos:Array<[Articulo, number]> = new Array<[Articulo, number]>();
+  listaArticulos: Array<[Articulo, number]> = new Array<[Articulo, number]>();
 
   clickedItem: number = undefined;
 
-  constructor(private articuloService: ArticuloService, private pedidoService:PedidoService) {
+  constructor(private articuloService: ArticuloService, private pedidoService: PedidoService) {
   }
 
   ngOnInit(): void {
@@ -32,40 +32,34 @@ export class TarjetaPedidoComponent implements OnInit {
     for (const item of this.ped.articulos) {
       this.articuloService.getArticuloWithID(item.id).subscribe(
         ok => {
-          this.listaArticulos.push([ok,item.cantidad]);
+          this.listaArticulos.push([ok, item.cantidad]);
           this.precioTotal += (ok.precio * item.cantidad);
         }
       );
     }
-    
+
   }
 
   getTotal() {
     return this.precioTotal;
   }
 
-  delete(){
+  delete() {
     this.pedidoService.deletePedido(this.ped.id).subscribe(
-      ok=> alert(`Pedido eliminado`)
+      ok => alert(`Pedido eliminado`)
     );
   }
 
-  update(){
+  update() {
     //TODO
     this.pedidoService.updatePedido(this.ped).subscribe(
-      ok=> alert(`Pedido ${ok.nombre} actualizado`)
+      ok => alert(`Pedido ${ok.nombre} actualizado`)
     );
   }
 
+  //Asigna el id del artículo clickeado a la variable clickedItem
   clickItem(id: number) {
     this.clickedItem = id;
-    for (const iterator in this.listaArticulos) {
-
-      console.log(iterator);
-      
-      
-    }
-    //console.log(this.listaArticulos.indexOf([art]));
-    
   }
+
 }

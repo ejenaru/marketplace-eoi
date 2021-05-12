@@ -7,6 +7,10 @@ article section {
     margin-left: 15px;
 }
 
+.artContainer {
+    cursor: pointer;
+}
+
 .selected {
     background-color: rgb(0, 153, 255);
 }

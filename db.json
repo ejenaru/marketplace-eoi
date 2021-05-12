@@ -59,21 +59,21 @@
   "articulo": [
     {
       "id": 1,
-      "nombre": "Mass Efect",
-      "precio": 20,
-      "stock": 12
+      "nombre": "Mass Effect",
+      "precio": 60,
+      "stock": 35
     },
     {
       "id": 2,
       "nombre": "Grand Theft Auto V",
-      "precio": 60,
-      "stock": 0
+      "precio": 4,
+      "stock": 4
     },
     {
       "id": 3,
       "nombre": "Resident Evil Village",
       "precio": 100,
-      "stock": 298
+      "stock": 288
     },
     {
       "id": 4,
@@ -104,6 +104,12 @@
       "precio": 20,
       "stock": 60,
       "id": 8
+    },
+    {
+      "id": 9,
+      "nombre": "7 Days to Die",
+      "precio": 40,
+      "stock": 173
     }
   ],
   "pedido": [
@@ -209,31 +215,15 @@
     },
     {
       "idUsuario": 3,
-      "nombre": "Pedido de Prueba",
-      "fecha": "2021-05-12",
+      "nombre": "Pedido 6",
+      "fecha": "2021/05/12",
       "articulos": [
         {
-          "id": 1,
+          "id": 9,
           "cantidad": 2
-        },
-        {
-          "id": 3,
-          "cantidad": 1
         }
       ],
       "id": 6
-    },
-    {
-      "idUsuario": 3,
-      "nombre": "nombre",
-      "fecha": "2021-05-05",
-      "articulos": [
-        {
-          "id": 1,
-          "cantidad": 2
-        }
-      ],
-      "id": 7
     }
   ]
 }

@@ -20,6 +20,8 @@ import { ConsultarPedidoComponent } from './componentes/consultar-pedido/consult
 import { TarjetaPedidoComponent } from './componentes/tarjeta-pedido/tarjeta-pedido.component';
 import { TarjetaArticuloComponent } from './componentes/tarjeta-articulo/tarjeta-articulo.component';
 import { TotalesPipe } from './pipes/totales.pipe';
+import { MatDialogModule } from 'angular-material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -47,9 +49,9 @@ import { TotalesPipe } from './pipes/totales.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
-
+    ReactiveFormsModule,
+    NgbModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

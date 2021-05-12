@@ -1,10 +1,11 @@
 <img src="../../../assets/logoMPart.png" alt="" width="250">
 
+<h5>{{art.nombre}}</h5>
+
 <div class="row">
 
-    <div>
-        <h2>{{art.nombre}}</h2>
-
+    <div class="datosArt">
+        
         <p>Stock: {{art.stock}}</p>
         <p>Precio: {{art.precio | currency:'EUR':true}}</p>
         <p>Pedido {{cantidadArticulo}} veces</p>
@@ -13,7 +14,43 @@
     <div class="buttonContainer">
         <br>
         <button class="btn btn btn-outline-danger" (click)="deleteArticulo(art)">Eliminar</button>
-        <button class="btn btn-outline-secondary">Actualizar</button>
+        <button class="btn btn-outline-secondary" (click)="open(content)">Actualizar</button>
     </div>
 
 </div>
+
+<br>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Actualizar Artículo</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label>Nombre Artículo</label>
+                <div class="input-group">
+                    <input id="artName" name="artName" class="form-control" [ngModel]=art.nombre>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <div class="input-group">
+                    <input id="artPrice" name="artPrice" type="number" class="form-control" [ngModel]=art.precio>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Stock Inicial</label>
+                <div class="input-group">
+                    <input id="artStock" name="artStock" type="number" class="form-control" [ngModel]=art.stock>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-dismiss="modal" (click)="modal.close('Save click'); onSubmit(f)">Actualizar</button>
+    </div>
+</ng-template>

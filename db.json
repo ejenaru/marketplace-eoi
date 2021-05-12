@@ -61,19 +61,19 @@
       "id": 1,
       "nombre": "Mass Effect",
       "precio": 60,
-      "stock": 35
+      "stock": 32
     },
     {
       "id": 2,
       "nombre": "Grand Theft Auto V",
       "precio": 4,
-      "stock": 4
+      "stock": 3
     },
     {
       "id": 3,
       "nombre": "Resident Evil Village",
       "precio": 100,
-      "stock": 288
+      "stock": 286
     },
     {
       "id": 4,

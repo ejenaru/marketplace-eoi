@@ -1,22 +1,42 @@
-<img src="../../../assets/logoeoiok_horiz_blanco.jpg" class="img-fluid">
-<h2>{{user.nombre}}</h2>
-<div class="row">
-    <div class="col">
-        <h6>Pedidos: </h6>
-        <ol>
-            Artículos top 3 pedidos
-            <li *ngFor="let articulo of top3">
-                {{articulo.nombre}}
-            </li>
-        </ol>
-        <p>Nº total de pedidos: {{listaPedidos.length}}</p>
-        
+<section >
+
+    <img src="../../../assets/logoeoiok_horiz_blanco.jpg" class=" row img-fluid">
+    <h3 class=" row d-block p-2 text-center">{{user.nombre}}</h3>
+    <div class="row">
+        <div class="col">
+            <h6>Pedidos: </h6>
+
+            <div class="container-fluid col" *ngIf="top3.length > 0; else elseBlock">
+                <div class="text-center font-weight-bold">
+                    TOP 3 ARTÍCULOS
+                </div>
+                <div class="row row-3 d-block text-center">
+                    <div *ngFor="let articulo of top3" class="border rounded">
+                        {{articulo.nombre}}
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-around">
+                    <div class="col-9">Total de pedidos: </div>
+                    <div class="col-3">{{listaPedidos.length}}</div>
+                </div>
+
+            </div>
+
+            <ng-template #elseBlock>
+                <div class="container-fluid col">
+                    <div class="text-center text-danger font-weight-normal ">
+                        No hay pedidos
+                    </div>
+                </div>
+            </ng-template>
+
+        </div>
+
     </div>
-    <div class="col">
-        <div class="d-inline-flex flex-column align-items-center">
-            <button class="block" (click)="borrar()">Borrar</button>
-            <br>
-            <button class="block" (click)="actualizar()">Consultar</button>
+    <div class="row d-flex flex-column justify-self-center">
+        <div class="">
+            <button class="block col m-2" (click)="borrar()">Borrar</button>
+            <button class="block col m-2" (click)="actualizar()">Consultar</button>
         </div>
     </div>
-</div>
+</section>

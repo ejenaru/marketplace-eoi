@@ -1,12 +1,12 @@
-<section class="container-fluid row align-items-center border" style="height: 400px">
-    <div class="col-3 border rounded">
+<section class="container-fluid row align-items-center " style="height: 400px">
+    <div class="col-3 ">
         <div class="d-inline-flex flex-column align-items-center">
             <button class="block" (click)="toNuevo()">Nuevo</button>
             <br>
             <button class="block" (click)="toConsultar()">Consultar</button>
         </div>
     </div>
-    <div class="col-9 border rounded ">
+    <div class="col-9">
         <div [ngSwitch]="actualPage">
             <app-nuevo-usuario *ngSwitchCase="'nuevo'"></app-nuevo-usuario>
             <app-consultar-usuario *ngSwitchCase="'consultar'"></app-consultar-usuario>

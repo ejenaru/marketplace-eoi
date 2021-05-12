@@ -19,7 +19,7 @@ export class TarjetaUsuarioComponent implements OnInit {
 
   articulosTotal: Map<Articulo, number> = new Map<Articulo, number>();
 
-  top3:Array<Articulo>;
+  top3:Array<Articulo> = new Array<Articulo>();
 
 
   constructor(private userService:UsuarioService, private pedidoService:PedidoService,
